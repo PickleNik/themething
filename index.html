@@ -54,7 +54,7 @@
     </style>
   </head>
   <body class="dark:bg-black dark:text-white">
-    <div>
+    <div class="flex items-center flex-col">
       <!-- <h1 class="text-3xl font-bold underline">Hello world!</h1> -->
       <div class="flex">
         <button class="btn b1">1</button>
@@ -72,16 +72,43 @@
         <button class="btn b4 ml-0 rounded-l-none">-</button>
       </div>
       <div class="flex justify-center">
-        <button class="btn b1 border-none rounded-r-sm hover:scale-105">
+        <button class="btn b1 border-none rounded-r-sm mx-0 hover:scale-105">
           +
         </button>
-        <div class="btn b1 border-none rounded-sm mx-0 hover:scale-105">
+        <div class="btn b1 border-none rounded-sm mx-[3px] hover:scale-105">
           xyz
         </div>
-        <button class="btn b1 border-none rounded-l-sm hover:scale-105">
+        <button class="btn b1 border-none rounded-l-sm mx-0 hover:scale-105">
           -
         </button>
       </div>
+      <div class="flex justify-center my-2">
+        <button
+          class="btn b5 py-1 text-blue-500 font-black border-none rounded-full"
+        >
+          tag
+        </button>
+        <button
+          class="btn b5 py-1 text-blue-500 font-black border-2 rounded-full"
+        >
+          tag
+        </button>
+        <button
+          class="btn b5 py-1 bg-blue-600 text-black font-black border-2 rounded-full"
+        >
+          tag
+        </button>
+      </div>
+      <button
+        class="btn mx-auto hover:scale-110 hover:rounded-2xl hover:bg-neutral-800 text-neutral-400 border-neutral-400 hover:border-white active:bg-neutral-400 hover:text-white active:scale-95 active:rounded-lg active:duration-75"
+      >
+        wobblewobble
+      </button>
+      <button
+        class="btn b1 mx-auto mt-4 hover:scale-125 hover:rounded-[2rem] active:scale-100 will-change:border-radius active:rounded-lg active:duration-150 active:duration-75 active:bg-neutral-100"
+      >
+        bobblebobble
+      </button>
     </div>
   </body>
 </html>
