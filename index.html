@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TT</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- ProsePlugin -->
+    <!-- <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script> -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: "#da373d",
+            },
+          },
+        },
+      };
+    </script>
+    <style type="text/tailwindcss">
+      @layer base {
+        .btn {
+          @apply px-4 py-2 m-1 block border rounded-xl duration-300;
+        }
+        .b1 {
+          @apply bg-neutral-700 border-neutral-400;
+        }
+        .b1:hover {
+          @apply bg-neutral-400 text-black;
+        }
+        .b4 {
+          @apply bg-neutral-900 border-neutral-600;
+        }
+        .b4:hover {
+          @apply bg-neutral-600;
+        }
+        .b2 {
+          @apply bg-blue-700 border-blue-400;
+        }
+        .b5 {
+          @apply bg-blue-900 border-blue-600;
+        }
+        .b3 {
+          @apply bg-indigo-700 text-indigo-100 border-transparent;
+        }
+        .b6 {
+          @apply bg-indigo-900 text-indigo-100 border-transparent;
+        }
+      }
+      body {
+        @apply grid place-items-center h-screen font-mono;
+      }
+    </style>
+  </head>
+  <body class="dark:bg-black dark:text-white">
+    <div>
+      <!-- <h1 class="text-3xl font-bold underline">Hello world!</h1> -->
+      <div class="flex">
+        <button class="btn b1">1</button>
+        <button class="btn b2">2</button>
+        <button class="btn b3">3</button>
+      </div>
+      <div class="flex">
+        <button class="btn b4">4</button>
+        <button class="btn b5">5</button>
+        <button class="btn b6">6</button>
+      </div>
+      <div class="flex justify-center">
+        <button class="btn b4 mr-0 rounded-r-none">+</button>
+        <div class="btn b4 border-x-0 rounded-none mx-0">xyz</div>
+        <button class="btn b4 ml-0 rounded-l-none">-</button>
+      </div>
+      <div class="flex justify-center">
+        <button class="btn b1 border-none rounded-r-sm hover:scale-105">
+          +
+        </button>
+        <div class="btn b1 border-none rounded-sm mx-0 hover:scale-105">
+          xyz
+        </div>
+        <button class="btn b1 border-none rounded-l-sm hover:scale-105">
+          -
+        </button>
+      </div>
+    </div>
+  </body>
+</html>
