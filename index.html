@@ -54,6 +54,9 @@
       .youtube:active {
         box-shadow: inset 0 0 1rem -0.5rem #fff;
       }
+      .glass {
+        @apply bg-neutral-800 bg-opacity-50 backdrop-filter backdrop-blur-2xl border-[#fff4] p-12;
+      }
     </style>
   </head>
   <body class="dark:bg-black dark:text-white">
@@ -120,6 +123,78 @@
       </button>
       <!-- todo:material ripple old -->
       <!-- todo:material ripple you -->
+      <div class="relative w-96 mt-8 overflow-hidden rounded-2xl">
+        <div
+          class="rounded-full w-48 h-48 absolute -right-8 -bottom-8 bg-cyan-600"
+        ></div>
+        <div
+          class="rounded-full w-48 h-48 absolute left-24 bottom-4 bg-blue-600"
+        ></div>
+        <div class="glass w-full border rounded-2xl flex">
+          <div
+            class="absolute rounded-full h-4 w-4 bg-orange-400 top-4 right-4"
+          ></div>
+          <button
+            class="absolute rounded-lg px-4 py-2 bottom-4 right-4 bg-black"
+          >
+            button ->
+          </button>
+          <div
+            class="rounded-full w-48 h-36 -top-12 -left-12 blur-2xl absolute bg-indigo-600"
+          ></div>
+          <div class="p-4">
+            <h1 class="font-bold text-2xl" style="mix-blend-mode: difference">
+              Heading Title
+            </h1>
+            <p>lorem20</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-black">if you're viewing this in light mode, stop.</div>
+
+      <div
+        class="rounded-full w-16 h-16 absolute right-12 bottom-12 bg-cyan-400"
+      ></div>
+      <div
+        class="rounded-full w-16 h-16 absolute right-36 bottom-36 bg-yellow-400"
+      ></div>
+      <div
+        class="rounded-full w-16 h-16 absolute right-24 bottom-24 bg-pink-400"
+      ></div>
+
+      <div
+        class="rounded-full w-16 h-16 absolute left-12 top-12 bg-red-400"
+      ></div>
+      <div
+        class="rounded-full w-16 h-16 absolute left-24 top-24 bg-green-400"
+      ></div>
+      <div
+        class="rounded-full w-16 h-16 absolute left-36 top-36 bg-blue-400"
+      ></div>
+
+      <div
+        class="rounded-full w-16 h-16 absolute right-12 top-12 bg-orange-400"
+      ></div>
+      <div
+        class="rounded-full w-16 h-16 absolute right-24 top-24 bg-purple-400"
+      ></div>
+      <div
+        class="rounded-full w-16 h-16 absolute right-36 top-36 bg-blue-400"
+      ></div>
+
+      <div
+        class="rounded-full w-16 h-16 absolute left-12 bottom-12 bg-green-400"
+      ></div>
+      <div
+        class="rounded-full w-16 h-16 absolute left-24 bottom-24 bg-teal-400"
+      ></div>
+      <div
+        class="rounded-full w-16 h-16 absolute left-36 bottom-36 bg-cyan-400"
+      ></div>
+      <div
+        class="rounded-full w-16 h-16 absolute left-48 bottom-48 bg-blue-400"
+      ></div>
     </div>
   </body>
 </html>
