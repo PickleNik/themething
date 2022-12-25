@@ -51,6 +51,9 @@
       body {
         @apply grid place-items-center h-screen font-mono;
       }
+      .youtube:active {
+        box-shadow: inset 0 0 1rem -0.5rem #fff;
+      }
     </style>
   </head>
   <body class="dark:bg-black dark:text-white">
@@ -105,10 +108,18 @@
         wobblewobble
       </button>
       <button
-        class="btn b1 mx-auto mt-4 hover:scale-125 hover:rounded-[2rem] active:scale-100 will-change:border-radius active:rounded-lg active:duration-150 active:duration-75 active:bg-neutral-100"
+        class="btn b1 mx-auto mt-4 hover:scale-125 hover:rounded-[2rem] active:scale-100 will-change:border-radius active:rounded-lg active:duration-75 active:bg-neutral-100"
       >
         bobblebobble
       </button>
+      <!-- todo:de-sync timing for active:border and active:box-shadow -->
+      <button
+        class="btn youtube mx-auto mt-4 hover:bg-neutral-800 border-neutral-500 active:border-neutral-100 active:bg-neutral-600"
+      >
+        YouTube
+      </button>
+      <!-- todo:material ripple old -->
+      <!-- todo:material ripple you -->
     </div>
   </body>
 </html>
