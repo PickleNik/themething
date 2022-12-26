@@ -393,7 +393,7 @@
         --80-700: hsl(80, 100%, 30%);
         --80-800: hsl(80, 100%, 20%);
         --80-900: hsl(80, 100%, 10%);
-        --80-50: hsl(80, 100%, 100%);
+        --100-50: hsl(100, 100%, 100%);
         --100-100: hsl(100, 100%, 90%);
         --100-200: hsl(100, 100%, 80%);
         --100-300: hsl(100, 100%, 70%);
@@ -576,11 +576,38 @@
         min-width: 4rem;
       }
       .colorcenter {
-        @apply w-full flex justify-center absolute left-[50%] top-[50%] -translate-x-1/2 -translate-y-1/2;
+        @apply w-full flex absolute left-[50%] top-[50%] -translate-x-1/2 -translate-y-1/2;
+      }
+      .cursorLate {
+        z-index: 99999999;
+        mix-blend-mode: difference;
+        transition: all 200ms ease-out;
+        position: fixed;
+        pointer-events: none;
+        left: 0;
+        top: 0;
+        transform: translate(calc(-50% + 15px), -50%);
+      }
+      .cursorCurrent {
+        z-index: 99999999;
+        mix-blend-mode: difference;
+        position: fixed;
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+        transition: width .3s, height .3s, opacity .3s;
+      }
+      .cursorinnerhover {
+        @apply h-12 w-12;
+      }
+      .click {
+        @apply h-24 w-24;
       }
     </style>
   </head>
   <body class="dark:bg-black dark:text-white">
+    <div class="cursorLate h-4 w-4 bg-white rounded-full"></div>
+    <div class="cursorCurrent border-2 border-white rounded-full h-8 w-8"></div>
+    
     <div class="flex items-center flex-col">
       <!-- <h1 class="text-3xl font-bold underline">Hello world!</h1> -->
       <div class="flex">
@@ -1069,7 +1096,7 @@
             <div class="colorcircle bg-transparent"></div>
           </div>
           <h1
-            class="font-bold text-2xl text-center"
+            class="font-bold text-2xl text-black bg-white text-center rounded-xl px-2 py-1"
             style="mix-blend-mode: difference"
           >
             TailwindCSS Palette
@@ -1494,7 +1521,7 @@
           </div>
 
           <h1
-            class="font-bold text-2xl text-center"
+            class="font-bold text-2xl text-black bg-white text-center rounded-xl px-2 py-1"
             style="mix-blend-mode: difference"
           >
             HSL/HSV/HSB Palette
@@ -1710,7 +1737,7 @@
             <div class="colorcircle bg-transparent"></div>
           </div>
           <h1
-            class="font-bold text-2xl text-center"
+            class="font-bold text-2xl text-black bg-white text-center rounded-xl px-2 py-1"
             style="mix-blend-mode: difference"
           >
             CIELAB/LCh Palette TBD
@@ -1718,6 +1745,411 @@
         </div>
       </div>
 
+      <div class="flex">
+        <div class="relative w-96 h-96 m-8 flex justify-center items-center">
+          <div class="colorcenter">
+            <div
+              class="w-[50%] bg-gradient-to-r from-cyan-900 via-cyan-500 to-cyan-50 h-16 rounded-full"
+            ></div>
+          </div>
+          <div class="rotate-[21deg] colorcenter">
+            <div
+              class="w-[50%] bg-gradient-to-r from-sky-900 via-sky-500 to-sky-50 h-16 rounded-full"
+            ></div>
+          </div>
+          <div class="rotate-[42deg] colorcenter">
+            <div
+              class="w-[50%] bg-gradient-to-r from-blue-900 via-blue-500 to-blue-50 h-16 rounded-full"
+            ></div>
+          </div>
+          <div class="rotate-[63deg] colorcenter">
+            <div
+              class="w-[50%] bg-gradient-to-r from-indigo-900 via-indigo-500 to-indigo-50 h-16 rounded-full"
+            ></div>
+          </div>
+          <div class="rotate-[84deg] colorcenter">
+            <div
+              class="w-[50%] bg-gradient-to-r from-violet-900 via-violet-500 to-violet-50 h-16 rounded-full"
+            ></div>
+          </div>
+          <div class="rotate-[105deg] colorcenter">
+            <div
+              class="w-[50%] bg-gradient-to-r from-purple-900 via-purple-500 to-purple-50 h-16 rounded-full"
+            ></div>
+          </div>
+          <div class="rotate-[126deg] colorcenter">
+            <div
+              class="w-[50%] bg-gradient-to-r from-fuchsia-900 via-fuchsia-500 to-fuchsia-50 h-16 rounded-full"
+            ></div>
+          </div>
+          <div class="rotate-[147deg] colorcenter">
+            <div
+              class="w-[50%] bg-gradient-to-r from-pink-900 via-pink-500 to-pink-50 h-16 rounded-full"
+            ></div>
+          </div>
+          <div class="rotate-[169deg] colorcenter">
+            <div
+              class="w-[50%] bg-gradient-to-r from-rose-900 via-rose-500 to-rose-50 h-16 rounded-full"
+            ></div>
+          </div>
+          <div class="rotate-[190deg] colorcenter">
+            <div
+              class="w-[50%] bg-gradient-to-r from-red-900 via-red-500 to-red-50 h-16 rounded-full"
+            ></div>
+          </div>
+          <div class="rotate-[212deg] colorcenter">
+            <div
+              class="w-[50%] bg-gradient-to-r from-orange-900 via-orange-500 to-orange-50 h-16 rounded-full"
+            ></div>
+          </div>
+          <div class="rotate-[233deg] colorcenter">
+            <div
+              class="w-[50%] bg-gradient-to-r from-amber-900 via-amber-500 to-amber-50 h-16 rounded-full"
+            ></div>
+          </div>
+          <div class="rotate-[254deg] colorcenter">
+            <div
+              class="w-[50%] bg-gradient-to-r from-yellow-900 via-yellow-500 to-yellow-50 h-16 rounded-full"
+            ></div>
+          </div>
+          <div class="rotate-[275deg] colorcenter">
+            <div
+              class="w-[50%] bg-gradient-to-r from-lime-900 via-lime-500 to-lime-50 h-16 rounded-full"
+            ></div>
+          </div>
+          <div class="rotate-[296deg] colorcenter">
+            <div
+              class="w-[50%] bg-gradient-to-r from-green-900 via-green-500 to-green-50 h-16 rounded-full"
+            ></div>
+          </div>
+          <div class="rotate-[317deg] colorcenter">
+            <div
+              class="w-[50%] bg-gradient-to-r from-emerald-900 via-emerald-500 to-emerald-50 h-16 rounded-full"
+            ></div>
+          </div>
+          <div class="rotate-[338deg] colorcenter">
+            <div
+              class="w-[50%] bg-gradient-to-r from-teal-900 via-teal-500 to-teal-50 h-16 rounded-full"
+            ></div>
+          </div>
+          <h1
+            class="font-bold text-2xl text-black bg-white text-center rounded-xl px-2 py-1"
+            style="mix-blend-mode: difference;""
+          >
+            TailwindCSS Gradients
+          </h1>
+        </div>
+
+        <div class="relative w-96 h-96 m-8 flex justify-center items-center">
+          <div class="colorcenter">
+            <div
+              class="w-[50%] bg-gradient-to-r from-hsl180-900 via-hsl180-500 to-hsl180-50 h-16 rounded-full"
+            ></div>
+          </div>
+          <div class="rotate-[21deg] colorcenter">
+            <div
+              class="w-[50%] bg-gradient-to-r from-hsl200-900 via-hsl200-500 to-hsl200-50 h-16 rounded-full"
+            ></div>
+          </div>
+          <div class="rotate-[42deg] colorcenter">
+            <div
+              class="w-[50%] bg-gradient-to-r from-hsl220-900 via-hsl220-500 to-hsl220-50 h-16 rounded-full"
+            ></div>
+          </div>
+          <div class="rotate-[63deg] colorcenter">
+            <div
+              class="w-[50%] bg-gradient-to-r from-hsl240-900 via-hsl240-500 to-hsl240-50 h-16 rounded-full"
+            ></div>
+          </div>
+          <div class="rotate-[84deg] colorcenter">
+            <div
+              class="w-[50%] bg-gradient-to-r from-hsl260-900 via-hsl260-500 to-hsl260-50 h-16 rounded-full"
+            ></div>
+          </div>
+          <div class="rotate-[105deg] colorcenter">
+            <div
+              class="w-[50%] bg-gradient-to-r from-hsl280-900 via-hsl280-500 to-hsl280-50 h-16 rounded-full"
+            ></div>
+          </div>
+          <div class="rotate-[126deg] colorcenter">
+            <div
+              class="w-[50%] bg-gradient-to-r from-hsl300-900 via-hsl300-500 to-hsl300-50 h-16 rounded-full"
+            ></div>
+          </div>
+          <div class="rotate-[147deg] colorcenter">
+            <div
+              class="w-[50%] bg-gradient-to-r from-hsl320-900 via-hsl320-500 to-hsl320-50 h-16 rounded-full"
+            ></div>
+          </div>
+          <div class="rotate-[169deg] colorcenter">
+            <div
+              class="w-[50%] bg-gradient-to-r from-hsl340-900 via-hsl340-500 to-hsl340-50 h-16 rounded-full"
+            ></div>
+          </div>
+          <div class="rotate-[190deg] colorcenter">
+            <div
+              class="w-[50%] bg-gradient-to-r from-hsl0-900 via-hsl0-500 to-hsl0-50 h-16 rounded-full"
+            ></div>
+          </div>
+          <div class="rotate-[212deg] colorcenter">
+            <div
+              class="w-[50%] bg-gradient-to-r from-hsl20-900 via-hsl20-500 to-hsl20-50 h-16 rounded-full"
+            ></div>
+          </div>
+          <div class="rotate-[233deg] colorcenter">
+            <div
+              class="w-[50%] bg-gradient-to-r from-hsl40-900 via-hsl40-500 to-hsl40-50 h-16 rounded-full"
+            ></div>
+          </div>
+          <div class="rotate-[254deg] colorcenter">
+            <div
+              class="w-[50%] bg-gradient-to-r from-hsl60-900 via-hsl60-500 to-hsl60-50 h-16 rounded-full"
+            ></div>
+          </div>
+          <div class="rotate-[275deg] colorcenter">
+            <div
+              class="w-[50%] bg-gradient-to-r from-hsl80-900 via-hsl80-500 to-hsl80-50 h-16 rounded-full"
+            ></div>
+          </div>
+          <div class="rotate-[296deg] colorcenter">
+            <div
+              class="w-[50%] bg-gradient-to-r from-hsl100-900 via-hsl100-500 to-hsl100-50 h-16 rounded-full"
+            ></div>
+          </div>
+          <div class="rotate-[317deg] colorcenter">
+            <div
+              class="w-[50%] bg-gradient-to-r from-hsl120-900 via-hsl120-500 to-hsl120-50 h-16 rounded-full"
+            ></div>
+          </div>
+          <div class="rotate-[338deg] colorcenter">
+            <div
+              class="w-[50%] bg-gradient-to-r from-hsl140-900 via-hsl140-500 to-hsl140-50 h-16 rounded-full"
+            ></div>
+          </div>
+          <h1
+            class="font-bold text-2xl text-black bg-white text-center rounded-xl px-2 py-1"
+            style="mix-blend-mode: difference; text-shadow: 0 0 1rem #000"
+          >
+            HSL/HSV/HSB Gradients
+          </h1>
+        </div>
+
+        <div class="relative w-96 h-96 m-8 flex justify-center items-center">
+          <div class="colorcenter">
+            <div class="colorcircle bg-lch1-900"></div>
+            <div class="colorcircle bg-lch1-800"></div>
+            <div class="colorcircle bg-lch1-700"></div>
+            <div class="colorcircle bg-lch1-600"></div>
+            <div class="colorcircle bg-lch1-500"></div>
+            <div class="colorcircle bg-lch1-400"></div>
+            <div class="colorcircle bg-lch1-300"></div>
+            <div class="colorcircle bg-lch1-200"></div>
+            <div class="colorcircle bg-lch1-100"></div>
+            <div class="colorcircle bg-lch1-50"></div>
+            <div class="colorcircle bg-white"></div>
+            <div class="colorcircle bg-transparent"></div>
+            <div class="colorcircle bg-transparent"></div>
+            <div class="colorcircle bg-transparent"></div>
+            <div class="colorcircle bg-transparent"></div>
+            <div class="colorcircle bg-transparent"></div>
+            <div class="colorcircle bg-transparent"></div>
+            <div class="colorcircle bg-transparent"></div>
+            <div class="colorcircle bg-transparent"></div>
+            <div class="colorcircle bg-transparent"></div>
+            <div class="colorcircle bg-transparent"></div>
+          </div>
+          <div class="rotate-[40deg] colorcenter">
+            <div class="colorcircle bg-lch2-900"></div>
+            <div class="colorcircle bg-lch2-800"></div>
+            <div class="colorcircle bg-lch2-700"></div>
+            <div class="colorcircle bg-lch2-600"></div>
+            <div class="colorcircle bg-lch2-500"></div>
+            <div class="colorcircle bg-lch2-400"></div>
+            <div class="colorcircle bg-lch2-300"></div>
+            <div class="colorcircle bg-lch2-200"></div>
+            <div class="colorcircle bg-lch2-100"></div>
+            <div class="colorcircle bg-lch2-50"></div>
+            <div class="colorcircle bg-white"></div>
+            <div class="colorcircle bg-transparent"></div>
+            <div class="colorcircle bg-transparent"></div>
+            <div class="colorcircle bg-transparent"></div>
+            <div class="colorcircle bg-transparent"></div>
+            <div class="colorcircle bg-transparent"></div>
+            <div class="colorcircle bg-transparent"></div>
+            <div class="colorcircle bg-transparent"></div>
+            <div class="colorcircle bg-transparent"></div>
+            <div class="colorcircle bg-transparent"></div>
+            <div class="colorcircle bg-transparent"></div>
+          </div>
+          <div class="rotate-[80deg] colorcenter">
+            <div class="colorcircle bg-lch3-900"></div>
+            <div class="colorcircle bg-lch3-800"></div>
+            <div class="colorcircle bg-lch3-700"></div>
+            <div class="colorcircle bg-lch3-600"></div>
+            <div class="colorcircle bg-lch3-500"></div>
+            <div class="colorcircle bg-lch3-400"></div>
+            <div class="colorcircle bg-lch3-300"></div>
+            <div class="colorcircle bg-lch3-200"></div>
+            <div class="colorcircle bg-lch3-100"></div>
+            <div class="colorcircle bg-lch3-50"></div>
+            <div class="colorcircle bg-white"></div>
+            <div class="colorcircle bg-transparent"></div>
+            <div class="colorcircle bg-transparent"></div>
+            <div class="colorcircle bg-transparent"></div>
+            <div class="colorcircle bg-transparent"></div>
+            <div class="colorcircle bg-transparent"></div>
+            <div class="colorcircle bg-transparent"></div>
+            <div class="colorcircle bg-transparent"></div>
+            <div class="colorcircle bg-transparent"></div>
+            <div class="colorcircle bg-transparent"></div>
+            <div class="colorcircle bg-transparent"></div>
+          </div>
+          <div class="rotate-[120deg] colorcenter">
+            <div class="colorcircle bg-lch4-900"></div>
+            <div class="colorcircle bg-lch4-800"></div>
+            <div class="colorcircle bg-lch4-700"></div>
+            <div class="colorcircle bg-lch4-600"></div>
+            <div class="colorcircle bg-lch4-500"></div>
+            <div class="colorcircle bg-lch4-400"></div>
+            <div class="colorcircle bg-lch4-300"></div>
+            <div class="colorcircle bg-lch4-200"></div>
+            <div class="colorcircle bg-lch4-100"></div>
+            <div class="colorcircle bg-lch4-50"></div>
+            <div class="colorcircle bg-white"></div>
+            <div class="colorcircle bg-transparent"></div>
+            <div class="colorcircle bg-transparent"></div>
+            <div class="colorcircle bg-transparent"></div>
+            <div class="colorcircle bg-transparent"></div>
+            <div class="colorcircle bg-transparent"></div>
+            <div class="colorcircle bg-transparent"></div>
+            <div class="colorcircle bg-transparent"></div>
+            <div class="colorcircle bg-transparent"></div>
+            <div class="colorcircle bg-transparent"></div>
+            <div class="colorcircle bg-transparent"></div>
+          </div>
+          <div class="rotate-[160deg] colorcenter">
+            <div class="colorcircle bg-lch5-900"></div>
+            <div class="colorcircle bg-lch5-800"></div>
+            <div class="colorcircle bg-lch5-700"></div>
+            <div class="colorcircle bg-lch5-600"></div>
+            <div class="colorcircle bg-lch5-500"></div>
+            <div class="colorcircle bg-lch5-400"></div>
+            <div class="colorcircle bg-lch5-300"></div>
+            <div class="colorcircle bg-lch5-200"></div>
+            <div class="colorcircle bg-lch5-100"></div>
+            <div class="colorcircle bg-lch5-50"></div>
+            <div class="colorcircle bg-white"></div>
+            <div class="colorcircle bg-transparent"></div>
+            <div class="colorcircle bg-transparent"></div>
+            <div class="colorcircle bg-transparent"></div>
+            <div class="colorcircle bg-transparent"></div>
+            <div class="colorcircle bg-transparent"></div>
+            <div class="colorcircle bg-transparent"></div>
+            <div class="colorcircle bg-transparent"></div>
+            <div class="colorcircle bg-transparent"></div>
+            <div class="colorcircle bg-transparent"></div>
+            <div class="colorcircle bg-transparent"></div>
+          </div>
+          <div class="rotate-[200deg] colorcenter">
+            <div class="colorcircle bg-lch6-900"></div>
+            <div class="colorcircle bg-lch6-800"></div>
+            <div class="colorcircle bg-lch6-700"></div>
+            <div class="colorcircle bg-lch6-600"></div>
+            <div class="colorcircle bg-lch6-500"></div>
+            <div class="colorcircle bg-lch6-400"></div>
+            <div class="colorcircle bg-lch6-300"></div>
+            <div class="colorcircle bg-lch6-200"></div>
+            <div class="colorcircle bg-lch6-100"></div>
+            <div class="colorcircle bg-lch6-50"></div>
+            <div class="colorcircle bg-white"></div>
+            <div class="colorcircle bg-transparent"></div>
+            <div class="colorcircle bg-transparent"></div>
+            <div class="colorcircle bg-transparent"></div>
+            <div class="colorcircle bg-transparent"></div>
+            <div class="colorcircle bg-transparent"></div>
+            <div class="colorcircle bg-transparent"></div>
+            <div class="colorcircle bg-transparent"></div>
+            <div class="colorcircle bg-transparent"></div>
+            <div class="colorcircle bg-transparent"></div>
+            <div class="colorcircle bg-transparent"></div>
+          </div>
+          <div class="rotate-[240deg] colorcenter">
+            <div class="colorcircle bg-lch7-900"></div>
+            <div class="colorcircle bg-lch7-800"></div>
+            <div class="colorcircle bg-lch7-700"></div>
+            <div class="colorcircle bg-lch7-600"></div>
+            <div class="colorcircle bg-lch7-500"></div>
+            <div class="colorcircle bg-lch7-400"></div>
+            <div class="colorcircle bg-lch7-300"></div>
+            <div class="colorcircle bg-lch7-200"></div>
+            <div class="colorcircle bg-lch7-100"></div>
+            <div class="colorcircle bg-lch7-50"></div>
+            <div class="colorcircle bg-white"></div>
+            <div class="colorcircle bg-transparent"></div>
+            <div class="colorcircle bg-transparent"></div>
+            <div class="colorcircle bg-transparent"></div>
+            <div class="colorcircle bg-transparent"></div>
+            <div class="colorcircle bg-transparent"></div>
+            <div class="colorcircle bg-transparent"></div>
+            <div class="colorcircle bg-transparent"></div>
+            <div class="colorcircle bg-transparent"></div>
+            <div class="colorcircle bg-transparent"></div>
+            <div class="colorcircle bg-transparent"></div>
+          </div>
+          <div class="rotate-[280deg] colorcenter">
+            <div class="colorcircle bg-lch8-900"></div>
+            <div class="colorcircle bg-lch8-800"></div>
+            <div class="colorcircle bg-lch8-700"></div>
+            <div class="colorcircle bg-lch8-600"></div>
+            <div class="colorcircle bg-lch8-500"></div>
+            <div class="colorcircle bg-lch8-400"></div>
+            <div class="colorcircle bg-lch8-300"></div>
+            <div class="colorcircle bg-lch8-200"></div>
+            <div class="colorcircle bg-lch8-100"></div>
+            <div class="colorcircle bg-lch8-50"></div>
+            <div class="colorcircle bg-white"></div>
+            <div class="colorcircle bg-transparent"></div>
+            <div class="colorcircle bg-transparent"></div>
+            <div class="colorcircle bg-transparent"></div>
+            <div class="colorcircle bg-transparent"></div>
+            <div class="colorcircle bg-transparent"></div>
+            <div class="colorcircle bg-transparent"></div>
+            <div class="colorcircle bg-transparent"></div>
+            <div class="colorcircle bg-transparent"></div>
+            <div class="colorcircle bg-transparent"></div>
+            <div class="colorcircle bg-transparent"></div>
+          </div>
+          <div class="rotate-[320deg] colorcenter">
+            <div class="colorcircle bg-lch9-900"></div>
+            <div class="colorcircle bg-lch9-800"></div>
+            <div class="colorcircle bg-lch9-700"></div>
+            <div class="colorcircle bg-lch9-600"></div>
+            <div class="colorcircle bg-lch9-500"></div>
+            <div class="colorcircle bg-lch9-400"></div>
+            <div class="colorcircle bg-lch9-300"></div>
+            <div class="colorcircle bg-lch9-200"></div>
+            <div class="colorcircle bg-lch9-100"></div>
+            <div class="colorcircle bg-lch9-50"></div>
+            <div class="colorcircle bg-white"></div>
+            <div class="colorcircle bg-transparent"></div>
+            <div class="colorcircle bg-transparent"></div>
+            <div class="colorcircle bg-transparent"></div>
+            <div class="colorcircle bg-transparent"></div>
+            <div class="colorcircle bg-transparent"></div>
+            <div class="colorcircle bg-transparent"></div>
+            <div class="colorcircle bg-transparent"></div>
+            <div class="colorcircle bg-transparent"></div>
+            <div class="colorcircle bg-transparent"></div>
+            <div class="colorcircle bg-transparent"></div>
+          </div>
+          <h1
+            class="font-bold text-2xl text-black bg-white text-center rounded-xl px-2 py-1"
+            style="mix-blend-mode: difference"
+          >
+            CIELAB/LCh Gradients TBD
+          </h1>
+        </div>
+      </div>
       <!-- <div
         class="rounded-full w-16 h-16 fixed right-12 bottom-12 bg-cyan-400"
       ></div>
@@ -1746,5 +2178,33 @@
         class="rounded-full w-16 h-16 fixed right-36 top-36 bg-blue-400"
       ></div> -->
     </div>
+    <script>
+
+      var cursor = document.querySelector('.cursorLate');
+      var cursorinner = document.querySelector('.cursorCurrent');
+
+      document.addEventListener('mousemove', function(e){
+        var x = e.clientX;
+        var y = e.clientY;
+        cursor.style.transform = `translate3d(calc(${e.clientX}px - 50%), calc(${e.clientY}px - 50%), 0)`
+      });
+
+      document.addEventListener('mousemove', function(e){
+        var x = e.clientX;
+        var y = e.clientY;
+        cursorinner.style.left = x + 'px';
+        cursorinner.style.top = y + 'px';
+      });
+
+      document.addEventListener('mousedown', function(){
+        cursor.classList.add('click');
+        cursorinner.classList.add('cursorinnerhover')
+      });
+
+      document.addEventListener('mouseup', function(){
+        cursor.classList.remove('click')
+        cursorinner.classList.remove('cursorinnerhover')
+      });
+    </script>
   </body>
 </html>
