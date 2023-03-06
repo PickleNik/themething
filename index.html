@@ -605,8 +605,8 @@
     </style>
   </head>
   <body class="dark:bg-black dark:text-white">
-    <div class="cursorLate h-4 w-4 bg-white rounded-full"></div>
-    <div class="cursorCurrent border-2 border-white rounded-full h-8 w-8"></div>
+    <!-- <div class="cursorLate h-4 w-4 bg-white rounded-full"></div>
+    <div class="cursorCurrent border-2 border-white rounded-full h-8 w-8"></div> -->
     
     <div class="flex items-center flex-col">
       <!-- <h1 class="text-3xl font-bold underline">Hello world!</h1> -->
@@ -667,6 +667,16 @@
         class="btn youtube duration-75 hover:duration-75 active:duration-75 mx-auto mt-4 border-neutral-800 bg-neutral-800 hover:bg-neutral-700 hover:border-neutral-700 active:border-neutral-100 active:bg-neutral-500"
       >
         YouTube
+      </button>
+
+      <!-- 1. arguments passed by value, original isn't changed, still runs but doesn't produce intended outcome -->
+      <!-- b. fails, changes where pointer points to, but not the value -->
+      <!-- 3. compile error -->
+      <button
+        class="hathora btn bg-lime-500 border-lime-500 bg-opacity-50 backdrop-blur-sm relative overflow-hidden z-10 relative"
+      >
+        <div class="hathora-inner absolute h-16 w-16 rounded-full bg-red-400 -translate-x-1/2 -translate-y-1/2 -z-10 blur-lg"></div>
+        Hathora
       </button>
       <!-- todo:material ripple old -->
       <!-- todo:material ripple you -->
@@ -2150,7 +2160,7 @@
           </h1>
         </div>
       </div>
-      <!-- <div
+      <div
         class="rounded-full w-16 h-16 fixed right-12 bottom-12 bg-cyan-400"
       ></div>
       <div
@@ -2176,12 +2186,27 @@
       ></div>
       <div
         class="rounded-full w-16 h-16 fixed right-36 top-36 bg-blue-400"
-      ></div> -->
+      ></div>
+
+      <div
+      class="rounded-full w-16 h-16 fixed left-12 bottom-36 bg-green-300"
+    ></div>
+      <div
+      class="rounded-full w-16 h-16 fixed left-12 bottom-12 bg-orange-300"
+    ></div>
+    <div
+      class="rounded-full w-16 h-16 fixed left-36 bottom-12 bg-lime-300"
+    ></div>
+    <div
+      class="rounded-full w-16 h-16 fixed left-36 bottom-36 bg-purple-300"
+    ></div>
     </div>
     <script>
 
       var cursor = document.querySelector('.cursorLate');
       var cursorinner = document.querySelector('.cursorCurrent');
+      var hathorainner = document.querySelector('.hathora-inner');
+      var hathora = document.querySelector('.hathora');
 
       document.addEventListener('mousemove', function(e){
         var x = e.clientX;
@@ -2194,6 +2219,13 @@
         var y = e.clientY;
         cursorinner.style.left = x + 'px';
         cursorinner.style.top = y + 'px';
+      });
+
+      document.addEventListener('mousemove', function(e){
+        var x = e.clientX - hathora.offsetLeft;
+        var y = e.clientY - hathora.offsetTop;
+        hathorainner.style.left = x + 'px';
+        hathorainner.style.top = y + 'px';
       });
 
       document.addEventListener('mousedown', function(){
