@@ -583,6 +583,7 @@
         mix-blend-mode: difference;
         transition: all 200ms ease-out;
         position: fixed;
+        opacity: 0.5;
         pointer-events: none;
         left: 0;
         top: 0;
@@ -592,6 +593,7 @@
         z-index: 99999999;
         mix-blend-mode: difference;
         position: fixed;
+        opacity: 0.5;
         transform: translate(-50%, -50%);
         pointer-events: none;
         transition: width .3s, height .3s, opacity .3s;
@@ -605,8 +607,8 @@
     </style>
   </head>
   <body class="dark:bg-black dark:text-white">
-    <!-- <div class="cursorLate h-4 w-4 bg-white rounded-full"></div>
-    <div class="cursorCurrent border-2 border-white rounded-full h-8 w-8"></div> -->
+    <div class="cursorLate h-4 w-4 bg-white rounded-full"></div>
+    <div class="cursorCurrent border-2 border-white rounded-full h-8 w-8"></div>
     
     <div class="flex items-center flex-col">
       <!-- <h1 class="text-3xl font-bold underline">Hello world!</h1> -->
@@ -673,7 +675,7 @@
       <!-- b. fails, changes where pointer points to, but not the value -->
       <!-- 3. compile error -->
       <button
-        class="hathora btn bg-lime-500 border-lime-500 bg-opacity-50 backdrop-blur-sm relative overflow-hidden z-10 relative"
+        class="hathora duration-150 hover:scale-125 hover:rounded-[2rem] active:scale-95 active:rounded-md btn bg-lime-500 text-lime-500 border-lime-500 bg-opacity-50 backdrop-blur-sm relative overflow-hidden z-10 relative mt-6 hover:bg-lime-700 hover:bg-opacity-50 active:bg-lime-300 active:bg-opacity-50"
       >
         <div class="hathora-inner absolute h-16 w-16 rounded-full bg-red-400 -translate-x-1/2 -translate-y-1/2 -z-10 blur-lg"></div>
         Hathora
